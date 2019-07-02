@@ -1,0 +1,19 @@
+interface Node {
+  id: ID!
+}
+
+type User implements Node {
+  """The ID of an object"""
+  id: ID!
+  firstName: String!
+}
+
+type Query {
+  user(id: ID): User
+
+  # Fetches an object given its ID
+  node(
+    # The ID of an object
+    id: ID!
+  ): Node
+}
